@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magnesy – Happy Paws</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf9;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffd6d6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4d1a1a;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .top-back-link {
+      display: block;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .top-back-link a {
+      text-decoration: none;
+      background-color: #ff9494;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-back-link a:hover {
+      background-color: #ff6f6f;
+    }
+
+    .product-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-card h1 {
+      margin-top: 0;
+      font-size: 2.2rem;
+      color: #a3643d;
+    }
+
+    .product-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .product-card h2 {
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      color: #865b39;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      flex: 1 1 calc(50% - 1rem);
+      max-width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (min-width: 600px) {
+      .gallery img {
+        flex: 1 1 calc(33.33% - 1rem);
+      }
+    }
+
+    .bottom-back-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .bottom-back-link a {
+      text-decoration: none;
+      background-color: #ffd6d6;
+      color: #333;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .bottom-back-link a:hover {
+      background-color: #ffc2c2;
+    }
+
+    #goTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff9494;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #goTopBtn.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Happy Paws – Produkt
+  </header>
+
+  <div class="top-back-link">
+    <a href="../index.html">← Powrót do sklepu</a>
+  </div>
+
+  <main>
+    <div class="product-card">
+      <h1>Magnesy</h1>
+      <p><strong>Cena:</strong> 8 zł</p>
+      <p>Zestaw brazylijskich magnesów, idealnych na lodówkę. Dodaj koloru swojej kuchni!</p>
+
+      <h2>Galeria zdjęć</h2>
+      <div class="gallery">
+        <img src="../images/Magnesy.jpg" alt="Magnesy-1" />
+      </div>
+
+      <div class="bottom-back-link">
+        <a href="../index.html">← Powrót do sklepu</a>
+      </div>
+    </div>
+  </main>
+
+  <button id="goTopBtn" onclick="scrollToTop()">↑</button>
+
+  <script>
+    const goTopBtn = document.getElementById("goTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        goTopBtn.classList.add("show");
+      } else {
+        goTopBtn.classList.remove("show");
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
